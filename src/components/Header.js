@@ -9,7 +9,7 @@ const Header = () => {
       <ul>
         <Link to="/">
           <li>
-            <button className="btn btn-home">Home</button>
+            <button className="btn btn-home">Homees</button>
           </li>
         </Link>
         <Link to="favorites">
