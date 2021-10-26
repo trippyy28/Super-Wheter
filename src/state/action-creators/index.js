@@ -4,21 +4,31 @@ export const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
 export const SET_FIVEDAYS_RESULTS = "SET_FIVEDAYS_RESULTS";
 export const SET_CURRENT_WEATHER_RESULTS = "SET_CURRENT_WEATHER_RESULTS";
 export const SET_LOCATION_BY_KEY = "SET_LOCATION_BY_KEY";
+export const SET_LOCATION_DATA = "SET_LOCATION_DATA";
 
-export const addToFavorites = (amount) => {
+export const setLocationData = (data) => {
   return (dispatch) => {
     dispatch({
-      type: ADD_TO_FAVORITES,
-      payload: amount,
+      type: SET_LOCATION_DATA,
+      payload: data,
     });
   };
 };
 
-export const removeFromFavorites = (amount) => {
+export const addToFavorites = (cityId) => {
+  return (dispatch) => {
+    dispatch({
+      type: ADD_TO_FAVORITES,
+      payload: cityId,
+    });
+  };
+};
+
+export const removeFromFavorites = (cityId) => {
   return (dispatch) => {
     dispatch({
       type: REMOVE_FROM_FAVORITES,
-      payload: amount,
+      payload: cityId,
     });
   };
 };

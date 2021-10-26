@@ -47,3 +47,6 @@ export function autoCompleteFunc(term) {
 
 
 
+const adaptedFavorites = favorites.map((locationId) =>
+locations.find(({ id }) => locationId + "" === id)
+);

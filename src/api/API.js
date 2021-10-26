@@ -1,4 +1,4 @@
-const API_KEY = "cax3zmXfulwzTxHLPPpnKnpqGV5QEEK3"; // jdJtjY5LHZvdj0IS8iiRqturSfo6sjq3 // cwlzjnKODPSt5tGLh63JEXDKL03vtfMB
+const API_KEY = "cax3zmXfulwzTxHLPPpnKnpqGV5QEEK3";
 
 const API_HOST = "http://dataservice.accuweather.com/";
 
@@ -16,6 +16,7 @@ const CurrentWeather = (key) =>
 const LocationByKey = (key) =>
   `${API_HOST}locations/v1/${key}?apikey=${API_KEY}`;
 
+// Please comment the promise to fetch the online data!
 export async function autoComplete(term) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -25,7 +26,7 @@ export async function autoComplete(term) {
   const response = await fetch(AutoComplete(term));
   return response.json();
 }
-
+// Please comment the promise to fetch the online data!
 export async function fiveDaysOfDaily(key) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -35,7 +36,7 @@ export async function fiveDaysOfDaily(key) {
   const response = await fetch(DaysOfDailyForecasts(key));
   return response.json();
 }
-
+// Please comment the promise to fetch the online data!
 export async function currentWeather(key) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -46,6 +47,7 @@ export async function currentWeather(key) {
   return response.json();
 }
 
+// Please comment the promise to fetch the online data!
 export async function locationByKey(key) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -56,21 +58,7 @@ export async function locationByKey(key) {
   return response.json();
 }
 
-// Static Data //
-
-// export const localWheter = {
-//   Headline: {
-//     Text: "Pleasant this weekend",
-//   },
-//   DailyForecasts: [
-//     {
-//       Temperature: {
-//         Minimum: { Value: 68.0, Unit: "F", UnitType: 18 },
-//         Maximum: { Value: 79.0, Unit: "F", UnitType: 18 },
-//       },
-//     },
-//   ],
-// };
+//Static Data
 export const autocompleteStaticData = [
   {
     Version: 1,

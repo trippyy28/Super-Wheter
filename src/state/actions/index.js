@@ -5,14 +5,15 @@ import { locationByKey } from "../../api/API";
 import { setAutoCompleteResults } from "../action-creators";
 import { setFiveDaysOfDailyResults } from "../action-creators";
 import { setCurrentWeatherResults } from "../action-creators";
-import { setLocationByKey } from "../action-creators";
+import { setLocationByKey, setLocationData } from "../action-creators";
+import { toast } from "react-toastify";
 
 export function fetchAutocompleteResults(term) {
   return function (dispatch) {
     return autoComplete(term).then(
       (results) => dispatch(setAutoCompleteResults(results)),
       (error) => {
-        console.log("error fetching autocmplete");
+        toast.error("error occurred. please try again later");
       }
     );
   };
@@ -23,7 +24,7 @@ export function fetchFiveDaysOfDaily(key) {
     return fiveDaysOfDaily(key).then(
       (results) => dispatch(setFiveDaysOfDailyResults(results)),
       (error) => {
-        console.log("error fetching results");
+        toast.error("error occurred. please try again later");
       }
     );
   };
@@ -34,7 +35,7 @@ export function fetchCurrentWeather(key) {
     return currentWeather(key).then(
       (results) => dispatch(setCurrentWeatherResults(results)),
       (error) => {
-        console.log("error fetching results");
+        toast.error("error occurred. please try again later");
       }
     );
   };
@@ -43,9 +44,12 @@ export function fetchCurrentWeather(key) {
 export function fetchLocationByKey(key) {
   return function (dispatch) {
     return locationByKey(key).then(
-      (results) => dispatch(setLocationByKey(results)),
+      (results) => {
+        dispatch(setLocationByKey(results));
+        dispatch(setLocationData(results));
+      },
       (error) => {
-        console.log("error fetching results");
+        toast.error("error occurred. please try again later");
       }
     );
   };

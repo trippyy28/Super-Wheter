@@ -97,8 +97,32 @@ a {
 .btn-fav {
   background-color: #eef0f1;
   transition: 1s;
+
+  min-width: 74px;
 }
 .btn-fav:hover {
+  background-color: #f5ff2d;
+}
+
+.btn-check-wheter {
+  color: #000000;
+  background-color: #2dabff;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btn-check-wheter:hover {
+  color: #ffffff;
+  background-color: #000000;
+  cursor: pointer;
+}
+.btn-convert {
+  background-color: #eef0f1;
+  transition: 1s;
+  cursor: pointer;
+  min-width: 74px;
+}
+.btn-convert:hover {
   background-color: #f5ff2d;
 }
 @media only screen and (max-width: 640px) {
@@ -150,6 +174,8 @@ a {
   font-family: forma-djr-banner, sans-serif;
   font-weight: 600;
   font-style: normal;
+  position: relative;
+  top: 32px;
 }
 
 .wheter-gallery {
@@ -169,6 +195,29 @@ a {
   display: flex;
   justify-content: space-between;
 }
+.input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn {
+  height: 24px;
+  width: 300px;
+  font-size: 12px;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #9de8f5;
+  cursor: pointer;
+}
+
+.div-options {
+  margin: 0;
+  padding: 0;
+  /* border: 0.5px solid rgb(129, 128, 128); */
+  position: absolute;
+  top: 205px;
+}
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .wheter-gallery {
@@ -182,8 +231,17 @@ a {
   .wheter-cityname-and-btn {
     flex-direction: column;
   }
+  .favs {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-@media only screen and (min-device-width: 800px) and (max-device-width: 1000px) {
+
+@media only screen and (max-devive-width: 830px) {
+  .favs {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 option {
@@ -207,17 +265,16 @@ option:hover {
   text-align: center;
 }
 
-.input-div {
+.favs {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.search-btn {
-  height: 24px;
-  width: 300px;
-  font-size: 12px;
-  font-family: "Noto Sans", sans-serif;
-  background-color: #9de8f5;
+.fav {
+  border: 1px solid rgb(9, 9, 9);
+  width: 150px;
+  text-align: center;
+  font-size: 14px;
+  margin: 2px;
+  background-image: url(./assets/bg/landscape.png);
 }

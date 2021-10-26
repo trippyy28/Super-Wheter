@@ -1,5 +1,3 @@
-import { ADD_TO_FAVORITES, SET_DEFAULT_RESULT } from "../action-creators";
-import { REMOVE_FROM_FAVORITES } from "../action-creators";
 import { SET_AUTOCOMPLETE_RESULTS } from "../action-creators";
 import { SET_FIVEDAYS_RESULTS } from "../action-creators";
 import { SET_CURRENT_WEATHER_RESULTS } from "../action-creators";
@@ -8,16 +6,6 @@ const initialState = { favorites: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TO_FAVORITES:
-      return {
-        ...state,
-        favorites: [...state.favorites, action.payload],
-      };
-    case REMOVE_FROM_FAVORITES:
-      return {
-        ...state,
-        favorites: state.favorites.filter(({ id }) => id === action.payload),
-      };
     case SET_AUTOCOMPLETE_RESULTS:
       return {
         ...state,
