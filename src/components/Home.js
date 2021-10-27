@@ -37,6 +37,9 @@ const Home = () => {
       console.log("no");
     }
   }, [query]);
+  if (!cityKey) {
+    return <div>Loading...</div>;
+  }
 
   function setCityNameAndKey(name, key) {
     setAutocompleteTerm(name);
