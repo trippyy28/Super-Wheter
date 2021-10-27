@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import { actions } from "../state";
 import { useQuery } from "../useQuery";
 import { addToFavorites, removeFromFavorites } from "../state/action-creators";
+import GifLoader from "react-gif-loader";
+import { margin } from "@mui/system";
 const Home = () => {
   const TEL_AVIV_KEY = 215854;
   const { autocompleteResults } = useSelector((state) => state.home);
@@ -88,7 +90,12 @@ const Home = () => {
           </button>
           <div className="div-options">
             {autocompleteResults == undefined ? (
-              <p className="loading">loading...</p>
+              <GifLoader
+                loading={true}
+                imageSrc="https://media.giphy.com/media/l378zKVk7Eh3yHoJi/source.gif"
+                imageStyle={{ width: 150, marginLeft: -73 }}
+                overlayBackground="rgba(0,0,0,0.5)"
+              />
             ) : (
               toggle &&
               autocompleteResults.map((i) => {
@@ -111,7 +118,7 @@ const Home = () => {
       </div>
       <div className="wheter-card">
         {locationByKey == undefined ? (
-          <h1>loading..</h1>
+          <p>Loading...</p>
         ) : (
           <div className="wheter-cityname-and-btn">
             {isFavorite ? (
@@ -145,7 +152,7 @@ const Home = () => {
         )}
         <div className="wheter-gallery">
           {fiveDaysResults == undefined ? (
-            <p>Loading...</p>
+            <p></p>
           ) : (
             fiveDaysResults.DailyForecasts?.map((forecast) => {
               return (

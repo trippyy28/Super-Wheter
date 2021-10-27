@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { actions } from "../state";
+import { addToFavorites, removeFromFavorites } from "../state/action-creators";
 const Favorites = () => {
   const { favorites, locations } = useSelector((state) => state.data);
   const { currentWeatherResults } = useSelector((state) => state.data);
@@ -39,6 +40,9 @@ const Favorites = () => {
                   onClick={() => onFavoriteClicked(i.id)}
                 >
                   Check Wheter
+                </button>
+                <button onClick={() => dispatch(removeFromFavorites(i.id))}>
+                  remove
                 </button>
                 <h2></h2>
               </div>

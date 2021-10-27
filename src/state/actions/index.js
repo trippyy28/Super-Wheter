@@ -13,9 +13,10 @@ export function fetchAutocompleteResults(term) {
     return autoComplete(term).then(
       (results) => dispatch(setAutoCompleteResults(results)),
       (error) => {
-        toast.error(
-          "error occurred(autocompleteresults). please try again later"
-        );
+        // toast.error(
+        //   "error occurred(autocompleteresults). please try again later"
+        // );
+        console.log("error fetching autocompleteresults");
       }
     );
   };
