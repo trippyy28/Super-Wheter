@@ -13,7 +13,9 @@ export function fetchAutocompleteResults(term) {
     return autoComplete(term).then(
       (results) => dispatch(setAutoCompleteResults(results)),
       (error) => {
-        toast.error("error occurred. please try again later");
+        toast.error(
+          "error occurred(autocompleteresults). please try again later"
+        );
       }
     );
   };
@@ -24,7 +26,7 @@ export function fetchFiveDaysOfDaily(key) {
     return fiveDaysOfDaily(key).then(
       (results) => dispatch(setFiveDaysOfDailyResults(results)),
       (error) => {
-        toast.error("error occurred. please try again later");
+        toast.error("error occurred(fivedaysforecast). please try again later");
       }
     );
   };
@@ -35,7 +37,7 @@ export function fetchCurrentWeather(key) {
     return currentWeather(key).then(
       (results) => dispatch(setCurrentWeatherResults(results)),
       (error) => {
-        toast.error("error occurred. please try again later");
+        toast.error("error occurred(currentwheter). please try again later");
       }
     );
   };
@@ -49,7 +51,7 @@ export function fetchLocationByKey(key) {
         dispatch(setLocationData(results));
       },
       (error) => {
-        toast.error("error occurred. please try again later");
+        toast.error("error occurred(locationbykey). please try again later");
       }
     );
   };
