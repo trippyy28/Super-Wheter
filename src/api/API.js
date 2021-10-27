@@ -18,42 +18,42 @@ const LocationByKey = (key) =>
 
 // Please comment the promise to fetch the online data!
 export async function autoComplete(term) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(autocompleteStaticData);
-    }, 3000);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(autocompleteStaticData);
+  //   }, 3000);
+  // });
   const response = await fetch(AutoComplete(term));
   return response.json();
 }
 // Please comment the promise to fetch the online data!
 export async function fiveDaysOfDaily(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(tlvForecast);
-    }, 3000);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(tlvForecast);
+  //   }, 3000);
+  // });
   const response = await fetch(DaysOfDailyForecasts(key));
   return response.json();
 }
 // Please comment the promise to fetch the online data!
 export async function currentWeather(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(anotherTlv);
-    }, 1800);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(anotherTlv);
+  //   }, 1800);
+  // });
   const response = await fetch(CurrentWeather(key));
   return response.json();
 }
 
 // Please comment the promise to fetch the online data!
 export async function locationByKey(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(locationByKeyStatice);
-    }, 1800);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(locationByKeyStatice);
+  //   }, 1800);
+  // });
   const response = await fetch(LocationByKey(key));
   return response.json();
 }
