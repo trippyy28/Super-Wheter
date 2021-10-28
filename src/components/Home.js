@@ -153,7 +153,7 @@ const Home = () => {
               </button>
             ) : (
               <button className="btn-convert" onClick={() => setIsC(!isC)}>
-                convert to C
+                convert to &#8451;
               </button>
             )}
           </div>
@@ -173,7 +173,7 @@ const Home = () => {
                         ((forecast.Temperature.Minimum.Value - 32) * 5) /
                         9
                       ).toFixed()}
-                      C
+                      &#8451;
                     </h2>
                   ) : (
                     <h2>
