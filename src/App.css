@@ -186,7 +186,8 @@ a {
   font-style: normal;
   position: relative;
   top: 6px;
-  background-color: #9de8f5;
+  background-image: url(./assets/bg/clouds2.jpeg);
+  font-family: "Zen Kurenaido", sans-serif;
 }
 
 .wheter-gallery {
@@ -201,10 +202,14 @@ a {
   text-align: center;
   font-size: 14px;
   margin: 2px;
+  background-color: rgb(180, 248, 248);
 }
 .wheter-cityname-and-btn {
   display: flex;
   justify-content: space-between;
+}
+.city-name-header {
+  background-color: rgb(62, 162, 255);
 }
 .input-div {
   display: flex;

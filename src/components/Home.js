@@ -146,7 +146,7 @@ const Home = () => {
                 favorite
               </button>
             )}
-            <h1>{locationByKey.LocalizedName}</h1>
+            <h1 className="city-name-header">{locationByKey.LocalizedName}</h1>
             {isC ? (
               <button className="btn-convert" onClick={() => setIsC(!isC)}>
                 convert to F
