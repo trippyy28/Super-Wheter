@@ -150,7 +150,7 @@ const Home = () => {
             <h1 className="city-name-header">{locationByKey.LocalizedName}</h1>
             {isC ? (
               <button className="btn-convert" onClick={() => setIsC(!isC)}>
-                convert to F
+                convert to &#8457;
               </button>
             ) : (
               <button className="btn-convert" onClick={() => setIsC(!isC)}>
@@ -179,7 +179,7 @@ const Home = () => {
                   ) : (
                     <h2>
                       {forecast.Temperature.Minimum.Value}
-                      {forecast.Temperature.Minimum.Unit}
+                      &#8457;
                     </h2>
                   )}
                   <img
