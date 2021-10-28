@@ -97,7 +97,7 @@ a {
   border-radius: 24px;
 }
 .btn-fav {
-  background-color: #eef0f1;
+  background-color: #7cd3ff;
   transition: 1s;
   font-family: "Zen Kurenaido", sans-serif;
   min-width: 74px;
@@ -105,7 +105,7 @@ a {
   font-weight: bold;
 }
 .btn-fav:hover {
-  background-color: #f5ff2d;
+  background-color: #63eed7;
 }
 
 .btn-check-wheter {
@@ -121,7 +121,7 @@ a {
   cursor: pointer;
 }
 .btn-convert {
-  background-color: #eef0f1;
+  background-color: #7cd3ff;
   transition: 1s;
   cursor: pointer;
   max-width: 60px;
@@ -130,7 +130,7 @@ a {
   font-weight: bold;
 }
 .btn-convert:hover {
-  background-color: #f5ff2d;
+  background-color: #63eed7;
 }
 @media only screen and (max-width: 640px) {
   .home {
@@ -165,7 +165,7 @@ a {
 
 /*Home */
 .home {
-  margin: 10rem auto;
+  margin: 8.8rem auto;
 }
 
 .cities-input {
@@ -209,7 +209,7 @@ a {
   justify-content: space-between;
 }
 .city-name-header {
-  background-color: rgb(62, 162, 255);
+  background-color: rgb(241, 253, 255);
 }
 .input-div {
   display: flex;
@@ -230,7 +230,9 @@ a {
 .div-options {
   border: 0.5px solid rgb(129, 128, 128);
   position: absolute;
-  top: 205px;
+  z-index: 99;
+  top: 160px;
+  background-color: white;
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {

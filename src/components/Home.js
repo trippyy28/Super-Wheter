@@ -90,12 +90,12 @@ const Home = () => {
             placeholder="Find city"
             className="cities-input"
           ></input>
-          <button
+          {/* <button
             className="search-btn"
             onClick={() => history.push(`/?cityKey=${cityKey}`)}
           >
             Search
-          </button>
+          </button> */}
           <div className="div-options">
             {autocompleteResults == undefined ? (
               <GifLoader

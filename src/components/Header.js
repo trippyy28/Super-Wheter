@@ -6,9 +6,11 @@ const Header = () => {
   const history = useHistory();
   return (
     <nav className="navbar">
-      <Link to="/">
-        <button className="btn-logo">Super Whether</button>
-      </Link>
+      <a>
+        <button className="btn-logo" disabled={true}>
+          Super Whether
+        </button>
+      </a>
       <ul>
         <li>
           <button
