@@ -217,6 +217,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Zen Kurenaido", sans-serif;
 }
 
 .search-btn {
@@ -234,6 +235,8 @@ a {
   z-index: 99;
   top: 160px;
   background-color: white;
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: bolder;
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
