@@ -5,6 +5,7 @@ import { actions } from "../state";
 import { useQuery } from "../useQuery";
 import { addToFavorites, removeFromFavorites } from "../state/action-creators";
 import GifLoader from "react-gif-loader";
+import zIndex from "@mui/material/styles/zIndex";
 
 const Home = () => {
   const TEL_AVIV_KEY = 215854;
