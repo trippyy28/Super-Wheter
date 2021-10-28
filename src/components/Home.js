@@ -5,7 +5,7 @@ import { actions } from "../state";
 import { useQuery } from "../useQuery";
 import { addToFavorites, removeFromFavorites } from "../state/action-creators";
 import GifLoader from "react-gif-loader";
-import { withRouter } from "react-router-dom";
+
 const Home = () => {
   const TEL_AVIV_KEY = 215854;
   const { autocompleteResults } = useSelector((state) => state.home);
@@ -29,15 +29,21 @@ const Home = () => {
     dispatch(actions.fetchLocationByKey(cityKey));
   }, [autocompleteTerm, cityKey]);
 
+  useEffect(() => {
+    if (!cityKey) {
+      history.push(`/?cityKey=${TEL_AVIV_KEY}`);
+    }
+  }, [query]);
+
   // useEffect(() => {
-  //   if (!cityKey) {
-  //     history.push(`/?cityKey=${TEL_AVIV_KEY}`);
-  //   }
-  // }, []);
-  if (!cityKey) {
-    history.push(`/?cityKey=${TEL_AVIV_KEY}`);
-    return <div>Loading...</div>;
-  }
+  //   setAutocompleteTerm("Tel Aviv");
+  //   setToggle(true);
+  // }, [autocompleteTerm]);
+
+  // if (!cityKey) {
+  //   history.push(`/?cityKey=${TEL_AVIV_KEY}`);
+  //   return <div>Loading...</div>;
+  // }
 
   function setCityNameAndKey(name, key) {
     setAutocompleteTerm(name);
@@ -85,7 +91,7 @@ const Home = () => {
           ></input>
           <button
             className="search-btn"
-            onClick={(cityKey) => setCityKey(cityKey)}
+            onClick={() => history.push(`/?cityKey=${cityKey}`)}
           >
             Search
           </button>
@@ -153,7 +159,7 @@ const Home = () => {
         )}
         <div className="wheter-gallery">
           {fiveDaysResults == undefined ? (
-            <p></p>
+            <p>..loading</p>
           ) : (
             fiveDaysResults.DailyForecasts?.map((forecast) => {
               return (
@@ -192,4 +198,4 @@ const Home = () => {
   );
 };
 
-export default withRouter(Home);
+export default Home;

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { actions } from "../state";
 import { addToFavorites, removeFromFavorites } from "../state/action-creators";
-import { withRouter } from "react-router-dom";
+
 const Favorites = () => {
   const { favorites, locations } = useSelector((state) => state.data);
   const { currentWeatherResults } = useSelector((state) => state.data);
@@ -20,7 +20,6 @@ const Favorites = () => {
   const dispatch = useDispatch();
   const onFavoriteClicked = (id) => {
     history.push(`/?cityKey=${id}`);
-    // history.push("/?cityKey=328328");
   };
   if (favorites == undefined && locations) {
     return <div>Loading...</div>;
@@ -33,21 +32,19 @@ const Favorites = () => {
       ) : (
         adaptedFavorites.map((i) => {
           return (
-            <div className="favs">
-              <div className="fav">
-                <h1>{i.name}</h1>
+            <div className="fav">
+              <h2>{i.name}</h2>
 
-                <p
-                  className="btn-check-wheter"
-                  onClick={() => onFavoriteClicked(i.id)}
-                >
-                  Check Wheter
-                </p>
-                <button onClick={() => dispatch(removeFromFavorites(i.id))}>
-                  remove
-                </button>
-                <h2></h2>
-              </div>
+              <p
+                className="btn-check-wheter"
+                onClick={() => onFavoriteClicked(i.id)}
+              >
+                Check Wheter
+              </p>
+              <button onClick={() => dispatch(removeFromFavorites(i.id))}>
+                remove
+              </button>
+              <h2></h2>
             </div>
           );
         })
@@ -56,4 +53,4 @@ const Favorites = () => {
   );
 };
 
-export default withRouter(Favorites);
+export default Favorites;

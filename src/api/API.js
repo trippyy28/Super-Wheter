@@ -3,7 +3,7 @@ const API_KEY = "cax3zmXfulwzTxHLPPpnKnpqGV5QEEK3";
 const API_HOST = "http://dataservice.accuweather.com/";
 
 const AutoComplete = (param) =>
-  `${API_HOST}locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${param}`;
+  `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=cax3zmXfulwzTxHLPPpnKnpqGV5QEEK3&q=${param}`;
 
 const DaysOfDailyForecasts = (key) =>
   `
@@ -18,42 +18,42 @@ const LocationByKey = (key) =>
 
 // Please comment the promise to fetch the online data!
 export async function autoComplete(term) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(autocompleteStaticData);
-    }, 3000);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(autocompleteStaticData);
+  //   }, 3000);
+  // });
   const response = await fetch(AutoComplete(term));
   return response.json();
 }
 // Please comment the promise to fetch the online data!
 export async function fiveDaysOfDaily(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(tlvForecast);
-    }, 3000);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(tlvForecast);
+  //   }, 3000);
+  // });
   const response = await fetch(DaysOfDailyForecasts(key));
   return response.json();
 }
 // Please comment the promise to fetch the online data!
 export async function currentWeather(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(anotherTlv);
-    }, 1800);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(anotherTlv);
+  //   }, 1800);
+  // });
   const response = await fetch(CurrentWeather(key));
   return response.json();
 }
 
 // Please comment the promise to fetch the online data!
 export async function locationByKey(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(locationByKeyStatice);
-    }, 1800);
-  });
+  // return new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(locationByKeyStatice);
+  //   }, 1800);
+  // });
   const response = await fetch(LocationByKey(key));
   return response.json();
 }
