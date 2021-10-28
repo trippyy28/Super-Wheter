@@ -27,7 +27,7 @@ export function fetchFiveDaysOfDaily(key) {
     return fiveDaysOfDaily(key).then(
       (results) => dispatch(setFiveDaysOfDailyResults(results)),
       (error) => {
-        toast.error("error occurred(fivedaysforecast). please try again later");
+        toast.error("error occurred. please try again later");
       }
     );
   };
@@ -38,7 +38,7 @@ export function fetchCurrentWeather(key) {
     return currentWeather(key).then(
       (results) => dispatch(setCurrentWeatherResults(results)),
       (error) => {
-        toast.error("error occurred(currentwheter). please try again later");
+        console.log("error fetching currentwheter");
       }
     );
   };
@@ -52,7 +52,7 @@ export function fetchLocationByKey(key) {
         dispatch(setLocationData(results));
       },
       (error) => {
-        toast.error("error occurred(locationbykey). please try again later");
+        console.log("error fetching locationbykey");
       }
     );
   };
