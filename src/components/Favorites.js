@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { actions } from "../state";
 import { addToFavorites, removeFromFavorites } from "../state/action-creators";
+import { withRouter } from "react-router-dom";
 const Favorites = () => {
   const { favorites, locations } = useSelector((state) => state.data);
   const { currentWeatherResults } = useSelector((state) => state.data);
@@ -19,6 +20,7 @@ const Favorites = () => {
   const dispatch = useDispatch();
   const onFavoriteClicked = (id) => {
     history.push(`/?citykey=${id}`);
+    // history.push("/?cityKey=328328");
   };
   if (favorites == undefined && locations) {
     return <div>Loading...</div>;
@@ -35,12 +37,12 @@ const Favorites = () => {
               <div className="fav">
                 <h1>{i.name}</h1>
 
-                <button
+                <p
                   className="btn-check-wheter"
-                  onClick={() => onFavoriteClicked(i.id)}
+                  onClick={() => onFavoriteClicked()}
                 >
                   Check Wheter
-                </button>
+                </p>
                 <button onClick={() => dispatch(removeFromFavorites(i.id))}>
                   remove
                 </button>
@@ -54,4 +56,4 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+export default withRouter(Favorites);

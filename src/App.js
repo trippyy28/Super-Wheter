@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import Whether from "./components/Home";
+import Home from "./components/Home";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Favorites from "./components/Favorites";
 import { ToastContainer } from "react-toastify";
@@ -12,7 +12,7 @@ function App() {
         <div className="App">
           <Header />
           <Route exact path="/">
-            <Whether />
+            <Home />
           </Route>
           <Route path="/favorites">
             <Favorites />

@@ -5,7 +5,7 @@ import { actions } from "../state";
 import { useQuery } from "../useQuery";
 import { addToFavorites, removeFromFavorites } from "../state/action-creators";
 import GifLoader from "react-gif-loader";
-import { margin } from "@mui/system";
+import { withRouter } from "react-router-dom";
 const Home = () => {
   const TEL_AVIV_KEY = 215854;
   const { autocompleteResults } = useSelector((state) => state.home);
@@ -29,15 +29,13 @@ const Home = () => {
     dispatch(actions.fetchLocationByKey(cityKey));
   }, [autocompleteTerm, cityKey]);
 
-  useEffect(() => {
-    if (!cityKey) {
-      console.log("yes");
-      history.push(`/?cityKey=${TEL_AVIV_KEY}`);
-    } else {
-      console.log("no");
-    }
-  }, [query]);
+  // useEffect(() => {
+  //   if (!cityKey) {
+  //     history.push(`/?cityKey=${TEL_AVIV_KEY}`);
+  //   }
+  // }, []);
   if (!cityKey) {
+    history.push(`/?cityKey=${TEL_AVIV_KEY}`);
     return <div>Loading...</div>;
   }
 
@@ -70,7 +68,7 @@ const Home = () => {
   //console log //
   // console.log("auto complete term", autocompleteTerm);
   // console.log("debug 5DAYSdefaultresults", fiveDaysResults);
-  // console.log(cityKey, "citykey");
+  console.log(cityKey, "citykey");
   // console.log("currentwheter", currentWeatherResults);
 
   const isFavorite = favorites.includes(cityKey);
@@ -194,4 +192,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
