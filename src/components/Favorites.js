@@ -19,7 +19,7 @@ const Favorites = () => {
 
   const dispatch = useDispatch();
   const onFavoriteClicked = (id) => {
-    history.push(`/?citykey=${id}`);
+    history.push(`/?cityKey=${id}`);
     // history.push("/?cityKey=328328");
   };
   if (favorites == undefined && locations) {
@@ -39,7 +39,7 @@ const Favorites = () => {
 
                 <p
                   className="btn-check-wheter"
-                  onClick={() => onFavoriteClicked()}
+                  onClick={() => onFavoriteClicked(i.id)}
                 >
                   Check Wheter
                 </p>
