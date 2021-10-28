@@ -73,6 +73,7 @@ const Home = () => {
     }
   }
   //console log //
+  console.log(autocompleteResults, "autocompleteresults");
   // console.log("auto complete term", autocompleteTerm);
   // console.log("debug 5DAYSdefaultresults", fiveDaysResults);
   console.log(cityKey, "citykey");
@@ -81,7 +82,7 @@ const Home = () => {
   const isFavorite = favorites.includes(cityKey);
 
   return (
-    <div>
+    <div className="home-background-mobile">
       <div className="home">
         <div className="input-div">
           <input

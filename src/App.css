@@ -135,6 +135,7 @@ a {
 @media only screen and (max-width: 640px) {
   .home {
     display: grid;
+    background-image: url(./assets/bg/clouds2.jpeg);
   }
   button {
     padding: 0.6rem 1rem;
@@ -185,7 +186,7 @@ a {
   font-weight: 600;
   font-style: normal;
   position: relative;
-  top: 6px;
+  top: 2px;
   background-image: url(./assets/bg/clouds2.jpeg);
   font-family: "Zen Kurenaido", sans-serif;
 }
@@ -236,12 +237,22 @@ a {
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .div-options {
+    z-index: 50;
+    border: none;
+  }
+
   .wheter-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
   .wheter-card {
     border: none;
+    z-index: 20;
+    background-color: none;
+  }
+  .wheter {
+    font-size: 12px;
   }
 
   .wheter-cityname-and-btn {
