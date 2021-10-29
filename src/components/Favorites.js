@@ -34,15 +34,17 @@ const Favorites = () => {
           return (
             <div className="fav">
               <h2>{i.name}</h2>
-
               <p
                 className="btn-check-wheter"
                 onClick={() => onFavoriteClicked(i.id)}
               >
                 Check Wheter
               </p>
-              <button onClick={() => dispatch(removeFromFavorites(i.id))}>
-                remove
+              <button
+                className="btn-remove-from-fav"
+                onClick={() => dispatch(removeFromFavorites(i.id))}
+              >
+                REMOVE
               </button>
               <h2></h2>
             </div>
