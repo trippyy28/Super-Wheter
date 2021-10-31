@@ -167,7 +167,7 @@ const Home = () => {
               return (
                 <div className="wheter">
                   <h2>{forecast.Date.slice(0, 10)}</h2>
-                  <h2>{forecast.Date.slice(11, 16)}</h2>
+                  {/* <h2>{forecast.Date.slice(11, 16)}</h2> */}
                   {isC ? (
                     <h2>
                       {(
